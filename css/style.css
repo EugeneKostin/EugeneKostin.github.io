@@ -11,6 +11,10 @@ a:hover {
   color: inherit;
 }
 
+.frozen {
+  overflow: hidden;
+}
+
 ul {
   list-style: none;
 }
@@ -987,7 +991,7 @@ nav ul li a.active:before, nav ul li a.active:after {
         -ms-flex-pack: center;
             justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     background-color: rgba(34, 34, 34, 0.95);
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
@@ -995,6 +999,7 @@ nav ul li a.active:before, nav ul li a.active:after {
     transition: .3s ease-out all;
     margin: 0;
     padding: 10px 0;
+    z-index: 99;
   }
   nav .container ul .nav_item {
     width: 100%;

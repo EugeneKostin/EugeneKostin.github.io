@@ -18,18 +18,22 @@ window.addEventListener('DOMContentLoaded', () => {
   menuItem = document.querySelectorAll('.nav_item'),
   hamburger = document.querySelector('.nav_mobile_button');
 
-  hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('nav_mobile_button_active');
-      menu.classList.toggle('nav_list_active');
-  });
+  menu_func = () => {
+    if (hamburger.classList.contains("nav_mobile_button_active") || menu.classList.contains("nav_list_active")){
+      hamburger.classList.remove('nav_mobile_button_active');
+      menu.classList.remove('nav_list_active');
+      document.body.classList.remove('frozen');
+    } else {
+      hamburger.classList.add('nav_mobile_button_active');
+      menu.classList.add('nav_list_active');
+      document.body.classList.add('frozen');
+    }
+  } 
 
-  menuItem.forEach(item => {
-      item.addEventListener('click', () => {
-          hamburger.classList.toggle('nav_mobile_button_active');
-          menu.classList.toggle('nav_list_active');
-      })
-  })
-})
+  hamburger.addEventListener('click', menu_func);
+  menuItem.forEach(item => {item.addEventListener('click', menu_func)})
+  
+});
 
 
 $(document).ready(function() {
