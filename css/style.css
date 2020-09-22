@@ -975,7 +975,6 @@ nav ul li a.active:before, nav ul li a.active:after {
     margin-top: 16px;
   }
   nav {
-    height: 36px;
     width: 100vw;
   }
   nav .container {
@@ -1069,7 +1068,6 @@ nav ul li a.active:before, nav ul li a.active:after {
             transform: translateY(-8px) rotate(405deg);
   }
   .subheader {
-    padding-top: 35px;
     min-height: 100px;
   }
   .subheader .mobile-hide {
