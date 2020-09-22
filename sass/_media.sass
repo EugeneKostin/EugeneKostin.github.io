@@ -1,0 +1,245 @@
+@media (max-width: 1200px)
+	.container
+		max-width: 90%
+	nav
+		.nav_item a
+			font-size: 14px
+	.hero
+		.row
+			h1
+				font-size: 52px
+			h2
+				font-size: 32px
+	.mobile_app
+		.row
+			@for $i from 1 through 6 
+				.mobile_app_item_#{$i} 
+					height: 260px
+					max-width: 300px
+					padding: 80px 0 30px 0
+			.mobile_app_item_title
+				font-size: 18px
+	.world_map
+		min-height: 650px
+	.footer
+		&_menu
+			width: 40%
+		&_app_links
+			&_item 
+				img
+					width: 80px
+@media (max-width: 991px)
+	nav
+		.nav_item a
+			font-size: 12px
+	.subheader 
+		.phone_number
+			font-size: 20px
+		.logo_icon
+			width: 100%
+		.logo_text
+			font-size: 12px
+	.hero
+		padding: 200px 0 80px 0
+		.row
+			h1
+				font-size: 40px
+			h2
+				font-size: 28px
+	.mobile_app
+		.row
+			@for $i from 1 through 6 
+				.mobile_app_item_#{$i} 
+					height: 250px
+					width: 280px
+					padding: 50px 10px 25px 10px
+			.mobile_app_item_title
+				font-size: 16px
+			.mobile_app_item_plus
+				bottom: 25px
+	
+	.car
+		padding: 60px 0 70px 0
+	
+	.world_map
+		min-height: 500px
+	.footer
+		padding: 0
+		flex-direction: column
+		align-items: center
+		&_social_icons
+			margin-top: 25px
+			justify-content: space-between
+			&_item
+				margin-right: 0
+		&_menu
+			margin-top: 30px
+			width: 50%
+		&_app_links
+			width: 50%
+			justify-content: space-around
+			&_item 
+				img
+					width: 100px
+
+@media (max-width: 576px)
+	.title
+		font-size: 18px
+		margin-top: 38px
+	.subtitle
+		font-size: 16px
+		margin-top: 16px
+
+	nav
+		height: 36px
+		width: 100vw
+		.container
+			max-width: 100%
+			padding: 0
+			.nav_list
+				flex-direction: column
+				justify-content: center
+				width: 100vw
+				background-color: rgba(34, 34, 34, .95)
+				transform: translateY(-100%)
+				transition: .3s ease-out all
+				margin: 0
+				padding: 10px 0
+				.nav_item 
+					width: 100%
+					a
+						display: block
+						padding: 10px 0 10px 20%
+						margin: 10px 0
+						font-size: 16px
+						font-weight: 500
+						&:before, &:after
+							height: 1px
+							background: linear-gradient(to right, $black, rgba(240, 240, 240, .4) 30%, $black );
+			.nav_list_active
+				transition: .5s ease-in-out
+				transform: translateY(0+35px)
+			.nav_mobile_button
+				display: block
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 15px
+				width: 24px
+				height: 18px
+				span
+					display: block
+					height: 2px
+					width: 100%
+					background-color: $white
+					margin-bottom: 6px
+					transition: .5s ease-in-out
+					&:last-child
+						margin-bottom: 0
+			.nav_mobile_button_active
+				span
+					&:first-child
+						transform: translateY(8px) rotate(315deg)
+					&:nth-child(2)
+						opacity: 0
+						transition: .3s linear
+					&:nth-child(3)
+						transform: translateY(-8px) rotate(405deg)
+
+	.subheader
+		padding-top: 35px
+		min-height: 100px
+		.mobile-hide
+			display: none
+		.mobile-visible
+			display: block
+	.subheader 
+		.phone_number
+			margin-top: 10px
+			font-size: 12px
+		.logo_icon
+			width: 100%
+			margin-top: 10px
+		.logo_text
+			display: none
+		.call_back
+			width: 100%
+			height: 30px
+			font-size: 10px
+			margin: 5px 0 10px 0
+	.hero
+		min-height: 400px
+		padding: 200px 0 60px 0
+		.row
+			h1
+				font-size: 32px
+				line-height: 42px
+			h2
+				margin-top: 40px
+				font-size: 18px
+				line-height: 28px
+			.desc_1, .desc_2
+				display: none
+			button
+				margin-top: 60px
+				width: 200px
+				height: 50px
+				font-size: 16px
+	.advantages
+		padding: 70px 0 70px 0
+		.adv_wrapper
+			display: flex
+			flex-direction: column
+			align-items: center
+			.adv_icon
+				width: 82px
+				height: 82px
+				img
+					height: 60%
+			.adv_text
+				margin: 0
+				margin-top: 15px
+				width: 100%
+				.adv_header
+					text-align: center
+				.adv_desc
+					margin-top: 10px
+		
+	.mobile_app
+		.row
+			@for $i from 1 through 6 
+				.mobile_app_item_#{$i} 
+					height: 240px
+					width: 260px
+					padding: 40px 10px 20px 10px
+			.mobile_app_item_title
+				font-size: 14px
+				letter-spacing: 0.5px
+			.mobile_app_item_plus
+				bottom: 20px
+	.car
+		min-height: 600px
+		padding: 30px 0 30px 0
+		background: linear-gradient(to bottom, #070716 65%, #1ca8c3 65%, #fff);
+	
+	.require
+		padding: 70px 0 30px 0
+	.world_map
+		min-height: 300px
+		padding: 40px 0 30px 0
+		.show_city
+			bottom: 30px
+	.footer
+		&_social_icons
+			width: 50%
+		&_menu
+			width: 90%
+			&_secondary
+				white-space: nowrap
+				&_item
+					margin: 10px
+		&_app_links
+			width: 80%
+			&_item 
+				img
+					width: 80px
