@@ -26,11 +26,9 @@ window.addEventListener('DOMContentLoaded', () => {
     if (hamburger.classList.contains("nav_mobile_button_active") || menu.classList.contains("nav_list_active")){
       hamburger.classList.remove('nav_mobile_button_active');
       menu.classList.remove('nav_list_active');
-      // document.body.classList.remove('frozen');
     } else {
       hamburger.classList.add('nav_mobile_button_active');
       menu.classList.add('nav_list_active');
-      // document.body.classList.add('frozen');
     }
   } 
 

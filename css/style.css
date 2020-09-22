@@ -987,9 +987,8 @@ nav ul li a.active:before, nav ul li a.active:after {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
     width: 100vw;
     height: 90vh;
     height: calc(var(--vh, 1vh) * 100);
@@ -999,23 +998,31 @@ nav ul li a.active:before, nav ul li a.active:after {
     -webkit-transition: .3s ease-out all;
     transition: .3s ease-out all;
     margin: 0;
-    padding: 10px 0;
+    padding: 50px 0;
   }
   nav .container ul .nav_item {
     width: 100%;
+    position: relative;
+  }
+  nav .container ul .nav_item::after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, right top, from(#222222), color-stop(30%, rgba(240, 240, 240, 0.4)), to(#222222));
+    background: linear-gradient(to right, #222222, rgba(240, 240, 240, 0.4) 30%, #222222);
   }
   nav .container ul .nav_item a {
     display: block;
     padding: 10px 0 10px 20%;
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
   }
   nav .container ul .nav_item a:before, nav .container ul .nav_item a:after {
     display: none;
-    height: 1px;
-    background: -webkit-gradient(linear, left top, right top, from(#222222), color-stop(30%, rgba(240, 240, 240, 0.4)), to(#222222));
-    background: linear-gradient(to right, #222222, rgba(240, 240, 240, 0.4) 30%, #222222);
   }
   nav .container .nav_list_active {
     -webkit-transition: .3s ease-in-out;
