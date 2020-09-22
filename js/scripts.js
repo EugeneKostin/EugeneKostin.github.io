@@ -1,15 +1,17 @@
 var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
+window.addEventListener('scroll', () => function() {
+
+  var nav = document.querySelector('nav')
   var currentScrollPos = window.pageYOffset;
+
   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
+    nav.classList.remove('nav-hide');
   } else {
-    document.getElementById("navbar").style.top = "-100%";
-    document.querySelector('.nav_mobile_button').classList.remove('nav_mobile_button_active');
-    document.querySelector('.nav_list').classList.remove('nav_list_active');
+    nav.classList.add('nav-hide');
   }
   prevScrollpos = currentScrollPos;
-}
+});
+
 
 window.addEventListener('DOMContentLoaded', () => {
   const menu = document.querySelector('.nav_list'),
@@ -23,10 +25,37 @@ window.addEventListener('DOMContentLoaded', () => {
 
   menuItem.forEach(item => {
       item.addEventListener('click', () => {
-        setTimeout(function() {
           hamburger.classList.toggle('nav_mobile_button_active');
           menu.classList.toggle('nav_list_active');
-        }, 50)
       })
   })
 })
+
+
+$(document).ready(function() {
+  $('#navbar li a[href^="#"]').bind('click', function(e) {
+
+      e.preventDefault(); // prevent hard jump, the default behavior
+
+      var target = this.hash;
+
+      // perform animated scrolling by getting top-position of target-element and set it as scroll target
+      $('html, body').stop().animate({
+          scrollTop: $(target).offset().top
+      }, 600, 'swing', function() {
+          location.hash = target; //attach the hash (#jumptarget) to the pageurl
+      });
+  });
+});
+
+$(window).scroll(function() {
+  var scrollDistance = $(window).scrollTop();
+
+  // Assign active class to nav links while scolling
+  $('section').each(function(i) {
+      if ($(this).position().top-200 <= scrollDistance) {
+          $('#navbar li a.active').removeClass('active');
+          $('#navbar li a').eq(i).addClass('active');
+      }
+  });
+}).scroll();

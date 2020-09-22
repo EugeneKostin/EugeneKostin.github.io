@@ -19,8 +19,8 @@ nav {
   height: 50px;
   background: #222222;
   position: fixed;
-  -webkit-transition: top 0.2s ease-in-out;
-  transition: top 0.2s ease-in-out;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
   width: 100%;
   top: 0;
   z-index: 999;
@@ -73,28 +73,43 @@ nav ul li a:before {
   transition: transform 0s cubic-bezier(0.175, 0.985, 0.62, 1.675), opacity 0s, -webkit-transform 0s cubic-bezier(0.175, 0.985, 0.62, 1.675);
 }
 
-nav ul li a:hover, nav ul li a:focus, nav ul li a:active {
+nav ul li a:hover, nav ul li a:focus {
   color: #f0f0f0;
 }
 
-nav ul li a:hover:before, nav ul li a:hover:after, nav ul li a:focus:before, nav ul li a:focus:after, nav ul li a:active:before, nav ul li a:active:after {
+nav ul li a:hover:before, nav ul li a:hover:after, nav ul li a:focus:before, nav ul li a:focus:after {
   opacity: 1;
   -webkit-transform: translateY(0);
           transform: translateY(0);
 }
 
-nav ul li a:hover:before, nav ul li a:focus:before, nav ul li a:active:before {
+nav ul li a:hover:before, nav ul li a:focus:before {
   -webkit-transition: opacity 0.3s, -webkit-transform 0.3s cubic-bezier(0.175, 0.985, 0.62, 1.675);
   transition: opacity 0.3s, -webkit-transform 0.3s cubic-bezier(0.175, 0.985, 0.62, 1.675);
   transition: transform 0.3s cubic-bezier(0.175, 0.985, 0.62, 1.675), opacity 0.3s;
   transition: transform 0.3s cubic-bezier(0.175, 0.985, 0.62, 1.675), opacity 0.3s, -webkit-transform 0.3s cubic-bezier(0.175, 0.985, 0.62, 1.675);
 }
 
-nav ul li a:hover:after, nav ul li a:focus:after, nav ul li a:active:after {
+nav ul li a:hover:after, nav ul li a:focus:after {
   -webkit-transition: opacity 0s 0.3s, -webkit-transform 0s 0.3s cubic-bezier(0.175, 0.985, 0.62, 1.675);
   transition: opacity 0s 0.3s, -webkit-transform 0s 0.3s cubic-bezier(0.175, 0.985, 0.62, 1.675);
   transition: transform 0s 0.3s cubic-bezier(0.175, 0.985, 0.62, 1.675), opacity 0s 0.3s;
   transition: transform 0s 0.3s cubic-bezier(0.175, 0.985, 0.62, 1.675), opacity 0s 0.3s, -webkit-transform 0s 0.3s cubic-bezier(0.175, 0.985, 0.62, 1.675);
+}
+
+nav ul li a.active {
+  color: #f0f0f0;
+}
+
+nav ul li a.active:before, nav ul li a.active:after {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.nav-hide {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
 .subheader {
@@ -963,7 +978,7 @@ nav ul li a:hover:after, nav ul li a:focus:after, nav ul li a:active:after {
     max-width: 100%;
     padding: 0;
   }
-  nav .container .nav_list {
+  nav .container ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -972,6 +987,7 @@ nav ul li a:hover:after, nav ul li a:focus:after, nav ul li a:active:after {
         -ms-flex-pack: center;
             justify-content: center;
     width: 100vw;
+    height: 100vh;
     background-color: rgba(34, 34, 34, 0.95);
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
@@ -980,24 +996,25 @@ nav ul li a:hover:after, nav ul li a:focus:after, nav ul li a:active:after {
     margin: 0;
     padding: 10px 0;
   }
-  nav .container .nav_list .nav_item {
+  nav .container ul .nav_item {
     width: 100%;
   }
-  nav .container .nav_list .nav_item a {
+  nav .container ul .nav_item a {
     display: block;
     padding: 10px 0 10px 20%;
     margin: 10px 0;
     font-size: 16px;
     font-weight: 500;
   }
-  nav .container .nav_list .nav_item a:before, nav .container .nav_list .nav_item a:after {
+  nav .container ul .nav_item a:before, nav .container ul .nav_item a:after {
+    display: none;
     height: 1px;
     background: -webkit-gradient(linear, left top, right top, from(#222222), color-stop(30%, rgba(240, 240, 240, 0.4)), to(#222222));
     background: linear-gradient(to right, #222222, rgba(240, 240, 240, 0.4) 30%, #222222);
   }
   nav .container .nav_list_active {
-    -webkit-transition: .5s ease-in-out;
-    transition: .5s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
     -webkit-transform: translateY(35px);
             transform: translateY(35px);
   }

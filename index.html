@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="css/style.min.css">
     <title>Uber proj 2</title>
 </head>
@@ -15,12 +16,12 @@
         <nav id="navbar">
             <div class="container">
                 <ul class="nav_list">
-                    <li class="nav_item"><a href="/">Главная</a></li>
-                    <li class="nav_item"><a href="#require">Со своим автомобилем</a></li>
-                    <li class="nav_item"><a href="#require">На автомобиле компании</a></li>
-                    <li class="nav_item"><a href="#">Требования</a></li>
-                    <li class="nav_item"><a href="#">Контакты</a></li>
-                    <li class="nav_item"><a href="#">Оставить заявку</a></li>
+                    <li class="nav_item"><a href="#hero">Главная</a></li>
+                    <li class="nav_item"><a href="#advantages">Работа у нас</a></li>
+                    <li class="nav_item"><a href="#mobile_app">Наше приложение</a></li>
+                    <li class="nav_item"><a href="#require">Условия и требования</a></li>
+                    <li class="nav_item"><a href="#map">Мы на карте</a></li>
+                    <li class="nav_item"><a href="">Оставить заявку</a></li>
                 </ul>
                 <div class="nav_mobile_button">
                     <span></span>
@@ -49,7 +50,7 @@
             </div>
         </div>
     </header>
-    <section class="hero overlay">
+    <section class="hero overlay" id="hero">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-10 offset-lg-1">
@@ -63,7 +64,7 @@
         </div>
     </section>
 
-    <section class="advantages">
+    <section class="advantages" id="advantages">
         <div class="container">
             <div class="label"><span class="label_black">преимущества</span></div>
             <h2 class="title text_black">8 причин начать работать с нами</h2>
@@ -144,7 +145,7 @@
         </div>
     </section>
 
-    <section class="mobile_app">
+    <section class="mobile_app" id="mobile_app">
         <div class="container">
             <div class="label"><span class="label_black">Возможности</span></div>
             <h2 class="title text_black">мобильное приложение убер</h2>
@@ -261,7 +262,7 @@
         </div>
     </section>
 
-    <section class="world_map">
+    <section class="world_map" id="map">
         <div class="label"><span class="label_white">города</span></div>
         <h2 class="title text_white">По всему миру</h2>
         <h3 class="subtitle text_white">Мы в вашем городе и по всему миру</h3>
