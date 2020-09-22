@@ -119,7 +119,7 @@ nav ul li a.active:before, nav ul li a.active:after {
 .subheader {
   min-height: 135px;
   padding-top: 50px;
-  background: rgba(22, 22, 22, 0.6);
+  background: rgba(34, 34, 34, 0.6);
   color: #f0f0f0;
   position: absolute;
   z-index: 2;
@@ -999,7 +999,6 @@ nav ul li a.active:before, nav ul li a.active:after {
     transition: .3s ease-out all;
     margin: 0;
     padding: 10px 0;
-    z-index: 99;
   }
   nav .container ul .nav_item {
     width: 100%;

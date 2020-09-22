@@ -1,16 +1,16 @@
-var prevScrollpos = window.pageYOffset;
-window.addEventListener('scroll', () => function() {
+// var prevScrollpos = window.pageYOffset;
+// window.addEventListener('scroll', () => function() {
 
-  var nav = document.querySelector('nav')
-  var currentScrollPos = window.pageYOffset;
+//   var nav = document.querySelector('nav')
+//   var currentScrollPos = window.pageYOffset;
 
-  if (prevScrollpos > currentScrollPos) {
-    nav.classList.remove('nav-hide');
-  } else {
-    nav.classList.add('nav-hide');
-  }
-  prevScrollpos = currentScrollPos;
-});
+//   if (prevScrollpos > currentScrollPos) {
+//     nav.classList.remove('nav-hide');
+//   } else {
+//     nav.classList.add('nav-hide');
+//   }
+//   prevScrollpos = currentScrollPos;
+// });
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -52,9 +52,19 @@ $(document).ready(function() {
   });
 });
 
+
+prevScrollTop = 0
 $(window).scroll(function() {
   var scrollDistance = $(window).scrollTop();
+  var nav = $('#navbar');
+  var nav_height = nav.height();
 
+  if (prevScrollTop < scrollDistance){
+    nav.addClass("nav-hide");
+  } else if (prevScrollTop > scrollDistance){
+    nav.removeClass("nav-hide");
+  }
+  prevScrollTop = scrollDistance
   // Assign active class to nav links while scolling
   $('section').each(function(i) {
       if ($(this).position().top-200 <= scrollDistance) {
