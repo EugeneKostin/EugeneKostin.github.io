@@ -100,7 +100,8 @@
 				flex-direction: column
 				justify-content: center
 				width: 100vw
-				height: 80vh
+				height: 90vh
+				height: calc(var(--vh, 1vh) * 100)
 				background-color: rgba(34, 34, 34, .95)
 				transform: translateY(-100%)
 				transition: .3s ease-out all
@@ -122,6 +123,7 @@
 			.nav_list_active
 				transition: .3s ease-in-out
 				transform: translateY(0+35px)
+				touch-action: none
 			.nav_mobile_button
 				display: block
 				position: absolute

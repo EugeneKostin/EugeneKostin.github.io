@@ -991,7 +991,8 @@ nav ul li a.active:before, nav ul li a.active:after {
         -ms-flex-pack: center;
             justify-content: center;
     width: 100vw;
-    height: 80vh;
+    height: 90vh;
+    height: calc(var(--vh, 1vh) * 100);
     background-color: rgba(34, 34, 34, 0.95);
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
@@ -1021,6 +1022,8 @@ nav ul li a.active:before, nav ul li a.active:after {
     transition: .3s ease-in-out;
     -webkit-transform: translateY(35px);
             transform: translateY(35px);
+    -ms-touch-action: none;
+        touch-action: none;
   }
   nav .container .nav_mobile_button {
     display: block;
